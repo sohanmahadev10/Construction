@@ -69,6 +69,18 @@
     @apply grid h-16 w-16 place-items-center rounded-sm bg-coal text-white shadow-[0_18px_35px_-22px_rgba(17,17,17,.9)];
   }
 
+  .service-visual-card {
+    @apply relative isolate overflow-hidden rounded-sm bg-coal shadow-[0_28px_80px_-42px_rgba(17,17,17,.88)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_34px_90px_-38px_rgba(17,17,17,.98)];
+  }
+
+  .service-image-icon {
+    @apply grid h-16 w-16 place-items-center rounded-sm border border-white/20 bg-white/10 text-white shadow-glass backdrop-blur-xl transition duration-300 group-hover:border-ember/70 group-hover:bg-ember;
+  }
+
+  .modal-close {
+    @apply grid h-12 w-12 shrink-0 place-items-center rounded-sm border border-white/10 bg-white/10 text-white shadow-glass backdrop-blur-xl transition hover:border-ember hover:bg-ember;
+  }
+
   .project-card {
     @apply relative h-[430px] overflow-hidden rounded-sm bg-white shadow-[0_30px_80px_-40px_rgba(0,0,0,.9)];
   }

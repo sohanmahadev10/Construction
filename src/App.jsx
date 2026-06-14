@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -57,63 +57,77 @@ const services = [
     icon: Home,
     title: "Residential House Construction",
     text: "Custom homes planned around your family, site conditions, budget, and long-term comfort across Mandya, Mysore, and Bangalore.",
+    image: assetPath("assets/project-exterior.png"),
   },
   {
     icon: Landmark,
     title: "Villa Construction",
     text: "Premium villa builds with strong structure, elegant elevations, refined finishes, and carefully managed site execution.",
+    image: assetPath("assets/hero-construction.png"),
   },
   {
     icon: Warehouse,
     title: "Commercial Building Construction",
     text: "Practical, durable commercial spaces designed for daily operations, customer movement, compliance, and future expansion.",
+    image: assetPath("assets/process-site.png"),
   },
   {
     icon: Sofa,
     title: "Interior Design",
     text: "Complete interior concepts for homes, apartments, offices, and retail spaces with premium materials and balanced layouts.",
+    image: assetPath("assets/project-interior.png"),
   },
   {
     icon: ChefHat,
     title: "Modular Kitchen",
     text: "Functional kitchens with smart storage, durable shutters, quality hardware, appliance planning, and clean installation.",
+    image: assetPath("assets/project-interior.png"),
   },
   {
     icon: PanelsTopLeft,
     title: "False Ceiling",
     text: "Modern ceiling designs with lighting integration, concealed services, clean edges, and elegant room-by-room styling.",
+    image: assetPath("assets/project-interior.png"),
   },
   {
     icon: PaintRoller,
     title: "Painting",
     text: "Interior and exterior painting with surface preparation, color guidance, texture options, and neat finishing standards.",
+    image: assetPath("assets/project-interior.png"),
   },
   {
     icon: Hammer,
     title: "Renovation",
     text: "Smart upgrades for older homes, flats, shops, and offices with practical phasing and minimum day-to-day disruption.",
+    image: assetPath("assets/process-site.png"),
   },
   {
     icon: Layers,
     title: "Flooring",
     text: "Tile, granite, marble, wooden, and vitrified flooring solutions selected for durability, budget, and visual finish.",
+    image: assetPath("assets/project-interior.png"),
   },
   {
     icon: PlugZap,
     title: "Electrical and Plumbing",
     text: "Reliable wiring, fixtures, water lines, drainage, and service coordination for new builds and renovation projects.",
+    image: assetPath("assets/process-site.png"),
   },
   {
     icon: DraftingCompass,
     title: "Architectural Planning",
     text: "Thoughtful plans, elevations, working drawings, and space layouts shaped around site potential and client needs.",
+    image: assetPath("assets/hero-construction.png"),
   },
   {
     icon: KeyRound,
     title: "Turnkey Construction",
     text: "One-point responsibility from planning and construction to interiors, finishes, supervision, and final handover.",
+    image: assetPath("assets/project-exterior.png"),
   },
 ];
+
+const featuredServices = services.slice(0, 3);
 
 const projects = [
   {
@@ -182,6 +196,40 @@ function Reveal({ children, className = "", delay = 0 }) {
   );
 }
 
+function ServiceVisualCard({ service, index = 0, compact = false }) {
+  const Icon = service.icon;
+
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.55, delay: index * 0.04, ease: [0.22, 1, 0.36, 1] }}
+      className={`service-visual-card group ${compact ? "min-h-[280px]" : "min-h-[360px]"}`}
+    >
+      <img
+        src={service.image}
+        alt={`${service.title} by ISHTA Construction and Interior`}
+        className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-coal via-coal/70 to-coal/20 transition duration-500 group-hover:from-black group-hover:via-coal/60" />
+      <div className="absolute inset-0 border border-white/10 transition duration-300 group-hover:border-ember/60" />
+      <div className="relative flex h-full flex-col justify-between p-6">
+        <span className="service-image-icon">
+          <Icon size={28} />
+        </span>
+        <span>
+          <p className="mb-3 inline-flex bg-white/10 px-3 py-1 text-[11px] font-black uppercase tracking-[0.16em] text-sand backdrop-blur">
+            Mandya . Mysore . Bangalore
+          </p>
+          <h3 className="text-2xl font-black leading-tight text-white">{service.title}</h3>
+          <p className="mt-3 leading-7 text-white/75">{service.text}</p>
+        </span>
+      </div>
+    </motion.article>
+  );
+}
+
 function Logo() {
   const [failed, setFailed] = useState(false);
 
@@ -213,6 +261,14 @@ function Logo() {
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = servicesOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [servicesOpen]);
 
   const submitContact = (event) => {
     event.preventDefault();
@@ -361,27 +417,65 @@ function App() {
 
         <section id="services" className="section bg-linen bg-fine-grid bg-[length:32px_32px]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <Reveal className="max-w-3xl">
-              <p className="eyebrow">Services</p>
-              <h2 className="section-title">Construction strength with interior-grade attention.</h2>
-            </Reveal>
-            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {services.map(({ icon: Icon, title, text }, index) => (
-                <Reveal key={title} delay={index * 0.035} className="service-card group">
-                  <span className="service-icon transition duration-300 group-hover:bg-ember group-hover:shadow-[0_18px_40px_-22px_rgba(185,28,28,.9)]">
-                    <Icon size={28} />
-                  </span>
-                  <h3 className="mt-7 text-xl font-black">{title}</h3>
-                  <p className="mt-3 leading-7 text-coal/70">{text}</p>
-                  <p className="mt-6 flex items-center gap-2 border-t border-coal/10 pt-5 text-xs font-black uppercase tracking-[0.16em] text-ember">
-                    <MapPin size={15} />
-                    Mandya . Mysore . Bangalore
-                  </p>
-                </Reveal>
+            <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+              <Reveal className="max-w-3xl">
+                <p className="eyebrow">Services</p>
+                <h2 className="section-title">Essential services first. Every capability one click away.</h2>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <p className="text-lg leading-8 text-coal/70">
+                  Explore our core construction services here, then open the full service studio for interiors, renovation, planning, and turnkey execution.
+                </p>
+              </Reveal>
+            </div>
+            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+              {featuredServices.map((service, index) => (
+                <ServiceVisualCard key={service.title} service={service} index={index} />
               ))}
             </div>
+            <Reveal delay={0.12} className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p className="max-w-2xl text-sm font-bold uppercase tracking-[0.14em] text-coal/60">
+                12 professional services for homes, villas, commercial spaces, and interiors.
+              </p>
+              <button className="btn-dark justify-center" type="button" onClick={() => setServicesOpen(true)}>
+                View All Services
+                <ArrowRight size={18} />
+              </button>
+            </Reveal>
           </div>
         </section>
+
+        {servicesOpen && (
+          <motion.section
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[70] overflow-y-auto bg-coal/95 px-4 py-5 text-white backdrop-blur-xl sm:px-6 lg:px-8"
+            aria-modal="true"
+            role="dialog"
+          >
+            <div className="mx-auto max-w-7xl">
+              <div className="sticky top-0 z-10 -mx-4 border-b border-white/10 bg-coal/90 px-4 py-4 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+                <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+                  <div>
+                    <p className="eyebrow text-sand">Complete Service Studio</p>
+                    <h2 className="mt-1 text-2xl font-black leading-tight text-white sm:text-4xl">
+                      All ISHTA services
+                    </h2>
+                  </div>
+                  <button className="modal-close" type="button" onClick={() => setServicesOpen(false)} aria-label="Close services">
+                    <X size={24} />
+                  </button>
+                </div>
+              </div>
+              <div className="grid gap-5 py-8 md:grid-cols-2 xl:grid-cols-3">
+                {services.map((service, index) => (
+                  <ServiceVisualCard key={service.title} service={service} index={index} compact />
+                ))}
+              </div>
+            </div>
+          </motion.section>
+        )}
 
         <section id="projects" className="section bg-coal text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
