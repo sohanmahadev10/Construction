@@ -128,6 +128,7 @@ const services = [
 ];
 
 const featuredServices = services.slice(0, 3);
+const heroStages = ["Empty Land", "Structure", "Interiors", "Handover"];
 
 const projects = [
   {
@@ -349,13 +350,25 @@ function App() {
             alt="Premium construction and interior project"
             className="absolute inset-0 h-full w-full object-cover"
           />
+          <video
+            className="hero-video absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={assetPath("assets/hero-construction.png")}
+            aria-hidden="true"
+          >
+            <source src={assetPath("assets/hero-construction-journey.mp4")} type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,17,17,.92),rgba(17,17,17,.58),rgba(17,17,17,.18))]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(185,28,28,.32),transparent_34%)]" />
           <div className="hero-inner relative mx-auto grid min-h-[calc(92svh-5rem)] max-w-7xl content-center px-4 pb-10 pt-16 sm:px-6 lg:px-8">
             <Reveal className="max-w-4xl">
-              <span className="inline-flex items-center gap-2 border-l-4 border-ember bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.24em] backdrop-blur">
+              <span className="hero-kicker inline-flex items-center gap-2 border-l-4 border-sand bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.24em] text-sand backdrop-blur">
                 <Sparkles size={16} />
-                Mandya . Mysore . Bangalore
+                From land to luxury handover
               </span>
               <h1 className="hero-title mt-7 max-w-4xl text-5xl font-black leading-[0.96] text-white sm:text-6xl lg:text-7xl">
                 ISHTA Construction and Interior
@@ -372,6 +385,14 @@ function App() {
                   View Projects
                   <Building2 size={19} />
                 </a>
+              </div>
+              <div className="hero-stage-track mt-8 grid max-w-2xl grid-cols-2 gap-2 sm:grid-cols-4">
+                {heroStages.map((stage, index) => (
+                  <span key={stage} className="hero-stage">
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    {stage}
+                  </span>
+                ))}
               </div>
             </Reveal>
             <div className="hero-stats mt-12 grid gap-3 sm:grid-cols-3 lg:max-w-4xl">
