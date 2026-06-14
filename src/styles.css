@@ -103,14 +103,6 @@
     box-shadow: inset 0 0 0 1px rgba(221, 199, 163, 0.18), 0 18px 55px -32px rgba(221, 199, 163, 0.9);
   }
 
-  .hero-stage {
-    @apply flex min-h-12 items-center gap-2 rounded-sm border border-sand/25 bg-black/20 px-3 py-2 text-[11px] font-black uppercase tracking-[0.14em] text-white/80 shadow-glass backdrop-blur-md;
-  }
-
-  .hero-stage span {
-    @apply text-sand;
-  }
-
   .mini-card {
     @apply flex min-h-24 items-center gap-4 rounded-sm border border-coal/10 bg-white p-5 shadow-[0_18px_50px_-38px_rgba(17,17,17,.65)];
   }
@@ -222,17 +214,6 @@
 
   .hero-stats {
     margin-top: 1.75rem;
-  }
-
-  .hero-stage-track {
-    margin-top: 1.4rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .hero-stage {
-    min-height: 2.7rem;
-    font-size: 0.64rem;
-    letter-spacing: 0.09em;
   }
 
   .hero-stats .glass-panel {

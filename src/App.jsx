@@ -128,7 +128,6 @@ const services = [
 ];
 
 const featuredServices = services.slice(0, 3);
-const heroStages = ["Empty Land", "Structure", "Interiors", "Handover"];
 
 const projects = [
   {
@@ -385,14 +384,6 @@ function App() {
                   View Projects
                   <Building2 size={19} />
                 </a>
-              </div>
-              <div className="hero-stage-track mt-8 grid max-w-2xl grid-cols-2 gap-2 sm:grid-cols-4">
-                {heroStages.map((stage, index) => (
-                  <span key={stage} className="hero-stage">
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    {stage}
-                  </span>
-                ))}
               </div>
             </Reveal>
             <div className="hero-stats mt-12 grid gap-3 sm:grid-cols-3 lg:max-w-4xl">
