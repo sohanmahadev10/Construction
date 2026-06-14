@@ -29,6 +29,44 @@
     @apply scroll-mt-20 py-20 sm:py-24 lg:py-28;
   }
 
+  .section-luxury-light {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 16% 12%, rgba(185, 28, 28, 0.12), transparent 28%),
+      radial-gradient(circle at 84% 16%, rgba(221, 199, 163, 0.46), transparent 34%),
+      linear-gradient(135deg, #fffaf2 0%, #f4eadc 48%, #ffffff 100%);
+  }
+
+  .section-dark-luxury {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 10% 10%, rgba(185, 28, 28, 0.28), transparent 30%),
+      radial-gradient(circle at 90% 20%, rgba(221, 199, 163, 0.16), transparent 34%),
+      linear-gradient(135deg, #0d0b0a 0%, #17110f 42%, #2a0d0d 100%);
+  }
+
+  .section-concrete-warm {
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(115deg, rgba(17, 17, 17, 0.06), transparent 34%),
+      radial-gradient(circle at 22% 20%, rgba(255, 255, 255, 0.72), transparent 24%),
+      radial-gradient(circle at 74% 12%, rgba(185, 28, 28, 0.1), transparent 28%),
+      linear-gradient(145deg, #efe4d2 0%, #d8c7ae 48%, #f8f4ec 100%);
+  }
+
+  .section-contact-luxury {
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(90deg, rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.56)),
+      var(--contact-bg);
+    background-position: center;
+    background-size: cover;
+  }
+
   .eyebrow {
     @apply text-xs font-black uppercase tracking-[0.22em] text-ember;
   }

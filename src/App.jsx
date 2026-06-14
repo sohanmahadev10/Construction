@@ -57,73 +57,73 @@ const services = [
     icon: Home,
     title: "Residential House Construction",
     text: "Custom homes planned around your family, site conditions, budget, and long-term comfort across Mandya, Mysore, and Bangalore.",
-    image: assetPath("assets/project-exterior.png"),
+    image: assetPath("assets/services/residential-house-construction.png"),
   },
   {
     icon: Landmark,
     title: "Villa Construction",
     text: "Premium villa builds with strong structure, elegant elevations, refined finishes, and carefully managed site execution.",
-    image: assetPath("assets/hero-construction.png"),
+    image: assetPath("assets/services/villa-construction.png"),
   },
   {
     icon: Warehouse,
     title: "Commercial Building Construction",
     text: "Practical, durable commercial spaces designed for daily operations, customer movement, compliance, and future expansion.",
-    image: assetPath("assets/process-site.png"),
+    image: assetPath("assets/services/commercial-building-construction.png"),
   },
   {
     icon: Sofa,
     title: "Interior Design",
     text: "Complete interior concepts for homes, apartments, offices, and retail spaces with premium materials and balanced layouts.",
-    image: assetPath("assets/project-interior.png"),
+    image: assetPath("assets/services/interior-design.png"),
   },
   {
     icon: ChefHat,
     title: "Modular Kitchen",
     text: "Functional kitchens with smart storage, durable shutters, quality hardware, appliance planning, and clean installation.",
-    image: assetPath("assets/project-interior.png"),
+    image: assetPath("assets/services/modular-kitchen.png"),
   },
   {
     icon: PanelsTopLeft,
     title: "False Ceiling",
     text: "Modern ceiling designs with lighting integration, concealed services, clean edges, and elegant room-by-room styling.",
-    image: assetPath("assets/project-interior.png"),
+    image: assetPath("assets/services/false-ceiling.png"),
   },
   {
     icon: PaintRoller,
     title: "Painting",
     text: "Interior and exterior painting with surface preparation, color guidance, texture options, and neat finishing standards.",
-    image: assetPath("assets/project-interior.png"),
+    image: assetPath("assets/services/painting.png"),
   },
   {
     icon: Hammer,
     title: "Renovation",
     text: "Smart upgrades for older homes, flats, shops, and offices with practical phasing and minimum day-to-day disruption.",
-    image: assetPath("assets/process-site.png"),
+    image: assetPath("assets/services/renovation.png"),
   },
   {
     icon: Layers,
     title: "Flooring",
     text: "Tile, granite, marble, wooden, and vitrified flooring solutions selected for durability, budget, and visual finish.",
-    image: assetPath("assets/project-interior.png"),
+    image: assetPath("assets/services/flooring.png"),
   },
   {
     icon: PlugZap,
     title: "Electrical and Plumbing",
     text: "Reliable wiring, fixtures, water lines, drainage, and service coordination for new builds and renovation projects.",
-    image: assetPath("assets/process-site.png"),
+    image: assetPath("assets/services/electrical-plumbing.png"),
   },
   {
     icon: DraftingCompass,
     title: "Architectural Planning",
     text: "Thoughtful plans, elevations, working drawings, and space layouts shaped around site potential and client needs.",
-    image: assetPath("assets/hero-construction.png"),
+    image: assetPath("assets/services/architectural-planning.png"),
   },
   {
     icon: KeyRound,
     title: "Turnkey Construction",
     text: "One-point responsibility from planning and construction to interiors, finishes, supervision, and final handover.",
-    image: assetPath("assets/project-exterior.png"),
+    image: assetPath("assets/services/turnkey-construction.png"),
   },
 ];
 
@@ -389,7 +389,7 @@ function App() {
           </div>
         </section>
 
-        <section id="about" className="section bg-white">
+        <section id="about" className="section section-luxury-light">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
             <Reveal>
               <p className="eyebrow">About ISHTA</p>
@@ -415,15 +415,15 @@ function App() {
           </div>
         </section>
 
-        <section id="services" className="section bg-linen bg-fine-grid bg-[length:32px_32px]">
+        <section id="services" className="section section-dark-luxury text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
               <Reveal className="max-w-3xl">
                 <p className="eyebrow">Services</p>
-                <h2 className="section-title">Essential services first. Every capability one click away.</h2>
+                <h2 className="section-title text-white">Essential services first. Every capability one click away.</h2>
               </Reveal>
               <Reveal delay={0.1}>
-                <p className="text-lg leading-8 text-coal/70">
+                <p className="text-lg leading-8 text-white/70">
                   Explore our core construction services here, then open the full service studio for interiors, renovation, planning, and turnkey execution.
                 </p>
               </Reveal>
@@ -434,10 +434,10 @@ function App() {
               ))}
             </div>
             <Reveal delay={0.12} className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <p className="max-w-2xl text-sm font-bold uppercase tracking-[0.14em] text-coal/60">
+              <p className="max-w-2xl text-sm font-bold uppercase tracking-[0.14em] text-white/60">
                 12 professional services for homes, villas, commercial spaces, and interiors.
               </p>
-              <button className="btn-dark justify-center" type="button" onClick={() => setServicesOpen(true)}>
+              <button className="btn-red justify-center" type="button" onClick={() => setServicesOpen(true)}>
                 View All Services
                 <ArrowRight size={18} />
               </button>
@@ -509,7 +509,7 @@ function App() {
           </div>
         </section>
 
-        <section id="why" className="section bg-white">
+        <section id="why" className="section section-luxury-light">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
             <Reveal>
               <p className="eyebrow">Why Choose Us</p>
@@ -529,11 +529,11 @@ function App() {
           </div>
         </section>
 
-        <section id="process" className="section bg-linen">
+        <section id="process" className="section section-concrete-warm">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
             <Reveal className="relative overflow-hidden rounded-sm shadow-premium">
               <img src={assetPath("assets/process-site.png")} alt="ISHTA construction process site" className="h-[460px] w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-coal/78 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-coal/80 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <p className="text-sm font-black uppercase text-sand">Construction Process</p>
                 <h2 className="mt-2 text-3xl font-black">From first meeting to final handover.</h2>
@@ -553,7 +553,7 @@ function App() {
           </div>
         </section>
 
-        <section id="interiors" className="section bg-white">
+        <section id="interiors" className="section section-luxury-light">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:px-8">
             <Reveal>
               <p className="eyebrow">Interiors</p>
@@ -606,12 +606,16 @@ function App() {
           </div>
         </section>
 
-        <section id="contact" className="section bg-linen">
+        <section
+          id="contact"
+          className="section section-contact-luxury"
+          style={{ "--contact-bg": `url(${assetPath("assets/project-exterior.png")})` }}
+        >
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.88fr_1.12fr] lg:px-8">
             <Reveal>
               <p className="eyebrow">Contact</p>
-              <h2 className="section-title">Tell us what you want to build.</h2>
-              <p className="mt-6 text-lg leading-8 text-coal/70">
+              <h2 className="section-title text-white">Tell us what you want to build.</h2>
+              <p className="mt-6 text-lg leading-8 text-white/70">
                 Share your location, project type, and timeline. ISHTA will help you shape the next step clearly.
               </p>
               <div className="mt-8 grid gap-4">

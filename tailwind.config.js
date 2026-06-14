@@ -18,10 +18,6 @@ export default {
       fontFamily: {
         display: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
-      backgroundImage: {
-        "fine-grid":
-          "linear-gradient(rgba(17,17,17,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(17,17,17,.05) 1px, transparent 1px)",
-      },
     },
   },
   plugins: [],
