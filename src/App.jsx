@@ -401,14 +401,32 @@ function App() {
           </div>
         </section>
 
-        <section id="about" className="section section-luxury-light">
-          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
-            <Reveal>
-              <p className="eyebrow">About ISHTA</p>
-              <h2 className="section-title">Built for clients who care about finish, clarity, and trust.</h2>
+        <section
+          id="about"
+          className="section about-video-section text-white"
+          style={{ "--about-poster": `url(${assetPath("assets/project-exterior.png")})` }}
+        >
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={assetPath("assets/project-exterior.png")}
+            aria-hidden="true"
+          >
+            <source src={assetPath("assets/Mansion.mp4")} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,17,17,.9),rgba(17,17,17,.72),rgba(17,17,17,.38))]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(221,199,163,.24),transparent_34%)]" />
+          <div className="relative mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:px-8">
+            <Reveal className="about-copy-panel">
+              <p className="eyebrow text-sand">About ISHTA</p>
+              <h2 className="section-title text-white">Built for clients who care about finish, clarity, and trust.</h2>
             </Reveal>
-            <Reveal delay={0.1} className="grid gap-6">
-              <p className="text-lg leading-8 text-coal/70">
+            <Reveal delay={0.1} className="about-copy-panel grid gap-6">
+              <p className="text-lg leading-8 text-white/80">
                 ISHTA Construction and Interior brings civil construction, interior execution, and renovation services under one focused team. We serve Mandya, Mysore, and Bangalore with a premium yet practical approach: strong structure, clean planning, better materials, and details that feel considered.
               </p>
               <div className="grid gap-4 sm:grid-cols-3">
@@ -417,8 +435,8 @@ function App() {
                   [Home, "Home Interiors"],
                   [ClipboardCheck, "Project Management"],
                 ].map(([Icon, label]) => (
-                  <div key={label} className="mini-card">
-                    <Icon className="text-ember" size={26} />
+                  <div key={label} className="about-mini-card">
+                    <Icon className="text-sand" size={26} />
                     <span className="font-extrabold">{label}</span>
                   </div>
                 ))}

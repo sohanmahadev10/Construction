@@ -67,6 +67,20 @@
     background-size: cover;
   }
 
+  .about-video-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 680px;
+  }
+
+  .about-copy-panel {
+    @apply rounded-sm border border-white/15 bg-black/30 p-6 shadow-glass backdrop-blur-md;
+  }
+
+  .about-mini-card {
+    @apply flex min-h-24 items-center gap-4 rounded-sm border border-white/15 bg-white/10 p-5 text-white shadow-glass backdrop-blur-md transition hover:-translate-y-1 hover:border-sand/50 hover:bg-white/20;
+  }
+
   .eyebrow {
     @apply text-xs font-black uppercase tracking-[0.22em] text-ember;
   }
@@ -225,6 +239,19 @@
     padding: 1rem;
   }
 
+  .about-video-section {
+    min-height: auto;
+  }
+
+  .about-copy-panel {
+    padding: 1.15rem;
+  }
+
+  .about-mini-card {
+    min-height: 4.65rem;
+    padding: 1rem;
+  }
+
   .service-visual-card {
     min-height: 16.5rem !important;
   }
@@ -282,7 +309,16 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-video {
+  .hero-video,
+  .about-video-section video {
     display: none;
+  }
+
+  .about-video-section {
+    background:
+      linear-gradient(90deg, rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.56)),
+      var(--about-poster);
+    background-position: center;
+    background-size: cover;
   }
 }
