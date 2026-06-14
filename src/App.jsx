@@ -41,6 +41,7 @@ const phoneHref = "tel:+918277023241";
 const whatsappHref =
   "https://wa.me/918277023241?text=Hi%20ISHTA%20Construction%20and%20Interior%2C%20I%20want%20to%20discuss%20a%20project.";
 const email = "Ishatconstructionandinterior@gmail.com";
+const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`;
 
 const navItems = [
   ["About", "#about"],
@@ -119,19 +120,19 @@ const projects = [
     title: "Premium Villa Build",
     type: "Construction",
     location: "Mysore",
-    image: "/assets/project-exterior.png",
+    image: assetPath("assets/project-exterior.png"),
   },
   {
     title: "Luxury Living Interior",
     type: "Interior Design",
     location: "Bangalore",
-    image: "/assets/project-interior.png",
+    image: assetPath("assets/project-interior.png"),
   },
   {
     title: "Structural Site Execution",
     type: "Civil Works",
     location: "Mandya",
-    image: "/assets/process-site.png",
+    image: assetPath("assets/process-site.png"),
   },
 ];
 
@@ -189,7 +190,7 @@ function Logo() {
       <span className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-sm border border-white/20 bg-white shadow-lg">
         {!failed ? (
           <img
-            src="/assets/logo.png"
+            src={assetPath("assets/logo.png")}
             alt="ISHTA Construction and Interior logo"
             className="h-full w-full object-contain p-1"
             onError={() => setFailed(true)}
@@ -288,7 +289,7 @@ function App() {
       <main>
         <section id="hero" className="relative min-h-[92svh] overflow-hidden pt-20 text-white">
           <img
-            src="/assets/hero-construction.png"
+            src={assetPath("assets/hero-construction.png")}
             alt="Premium construction and interior project"
             className="absolute inset-0 h-full w-full object-cover"
           />
@@ -437,7 +438,7 @@ function App() {
         <section id="process" className="section bg-linen">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
             <Reveal className="relative overflow-hidden rounded-sm shadow-premium">
-              <img src="/assets/process-site.png" alt="ISHTA construction process site" className="h-[460px] w-full object-cover" />
+              <img src={assetPath("assets/process-site.png")} alt="ISHTA construction process site" className="h-[460px] w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-coal/78 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <p className="text-sm font-black uppercase text-sand">Construction Process</p>
@@ -481,7 +482,7 @@ function App() {
               </div>
             </Reveal>
             <Reveal delay={0.1} className="relative">
-              <img src="/assets/project-interior.png" alt="Premium ISHTA interior project" className="h-[540px] w-full rounded-sm object-cover shadow-premium" />
+              <img src={assetPath("assets/project-interior.png")} alt="Premium ISHTA interior project" className="h-[540px] w-full rounded-sm object-cover shadow-premium" />
               <div className="absolute -bottom-5 left-4 right-4 glass-panel border-white/50 bg-white/75 p-5 text-coal shadow-glass sm:left-8 sm:right-auto sm:w-72">
                 <Award className="text-ember" size={28} />
                 <p className="mt-3 text-lg font-black">Designed for comfort. Detailed for longevity.</p>
