@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight,
   Award,
@@ -259,16 +259,77 @@ function Logo() {
   );
 }
 
+function SplashScreen() {
+  return (
+    <motion.div
+      className="splash-screen"
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0, scale: 1.02 }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      aria-hidden="true"
+    >
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster={assetPath("assets/hero-construction.png")}
+      >
+        <source src={assetPath("assets/hero-construction-journey.mp4")} type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(17,17,17,.96),rgba(40,12,12,.82),rgba(17,17,17,.96))]" />
+      <div className="splash-shine" />
+      <motion.div
+        className="splash-card"
+        initial={{ opacity: 0, y: 22, scale: 0.96 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <motion.span
+          className="splash-logo-ring"
+          initial={{ scale: 0.82, rotate: -4 }}
+          animate={{ scale: [0.82, 1.04, 1], rotate: 0 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <img src={assetPath("assets/logo.png")} alt="" className="h-full w-full object-contain p-4" />
+        </motion.span>
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35, duration: 0.55 }}
+          className="text-center"
+        >
+          <p className="text-xs font-black uppercase tracking-[0.26em] text-sand">Welcome to</p>
+          <h2 className="mt-2 text-3xl font-black uppercase leading-none text-white sm:text-5xl">
+            ISHTA
+          </h2>
+          <p className="mt-2 text-sm font-bold uppercase tracking-[0.16em] text-white/70">
+            Construction and Interior
+          </p>
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    document.body.style.overflow = servicesOpen ? "hidden" : "";
+    document.body.style.overflow = servicesOpen || showSplash ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [servicesOpen]);
+  }, [servicesOpen, showSplash]);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setShowSplash(false), 2000);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   const submitContact = (event) => {
     event.preventDefault();
@@ -284,6 +345,8 @@ function App() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-smoke font-display text-coal">
+      <AnimatePresence>{showSplash && <SplashScreen />}</AnimatePresence>
+
       <header className="fixed inset-x-0 top-0 z-50 border-b border-coal/10 bg-white/95 shadow-[0_18px_50px_-35px_rgba(17,17,17,.7)] backdrop-blur-xl">
         <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Logo />
@@ -418,18 +481,16 @@ function App() {
           >
             <source src={assetPath("assets/Mansion.mp4")} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,17,17,.9),rgba(17,17,17,.72),rgba(17,17,17,.38))]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(221,199,163,.24),transparent_34%)]" />
-          <div className="relative mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:px-8">
-            <Reveal className="about-copy-panel">
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,17,17,.95),rgba(17,17,17,.78),rgba(17,17,17,.28))]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_12%,rgba(221,199,163,.2),transparent_34%)]" />
+          <div className="relative mx-auto flex min-h-[560px] max-w-7xl items-center px-4 sm:px-6 lg:px-8">
+            <Reveal className="about-copy-panel max-w-3xl">
               <p className="eyebrow text-sand">About ISHTA</p>
               <h2 className="section-title text-white">Built for clients who care about finish, clarity, and trust.</h2>
-            </Reveal>
-            <Reveal delay={0.1} className="about-copy-panel grid gap-6">
               <p className="text-lg leading-8 text-white/80">
                 ISHTA Construction and Interior brings civil construction, interior execution, and renovation services under one focused team. We serve Mandya, Mysore, and Bangalore with a premium yet practical approach: strong structure, clean planning, better materials, and details that feel considered.
               </p>
-              <div className="grid gap-4 sm:grid-cols-3">
+              <div className="mt-6 flex flex-wrap gap-3">
                 {[
                   [HardHat, "Civil Construction"],
                   [Home, "Home Interiors"],
@@ -442,6 +503,11 @@ function App() {
                 ))}
               </div>
             </Reveal>
+          </div>
+          <div className="about-watermark-cover">
+            <p>Mandya . Mysore . Bangalore</p>
+            <h3>Premium construction and interiors</h3>
+            <span>From structure to final styling</span>
           </div>
         </section>
 
