@@ -171,7 +171,104 @@
 }
 
 @media (max-width: 640px) {
+  .section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    scroll-margin-top: 4.5rem;
+  }
+
   .section-title {
-    font-size: clamp(2.2rem, 13vw, 3.3rem);
+    font-size: clamp(1.95rem, 10.5vw, 2.7rem);
+    line-height: 1.05;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding-top: 4.5rem;
+  }
+
+  .hero-inner {
+    min-height: auto;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-title {
+    margin-top: 1.25rem;
+    font-size: clamp(2.55rem, 14vw, 4rem);
+  }
+
+  .hero-copy {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+
+  .hero-stats {
+    margin-top: 1.75rem;
+  }
+
+  .hero-stats .glass-panel {
+    padding: 0.9rem 1rem;
+  }
+
+  .mini-card {
+    min-height: 4.75rem;
+    padding: 1rem;
+  }
+
+  .service-visual-card {
+    min-height: 16.5rem !important;
+  }
+
+  .project-card {
+    height: 19rem;
+  }
+
+  .process-image {
+    height: 18rem;
+  }
+
+  .interior-image {
+    height: 20rem;
+  }
+
+  .reason-row {
+    min-height: 4.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .process-row {
+    grid-template-columns: 3.25rem 1fr;
+    gap: 0.9rem;
+    padding: 1rem;
+  }
+
+  .process-number {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  .testimonial-card {
+    min-height: auto;
+    padding: 1.25rem;
+  }
+
+  .contact-row {
+    min-height: 3.75rem;
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-form {
+    padding: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    min-height: 2.85rem;
+    font-size: 0.95rem;
   }
 }

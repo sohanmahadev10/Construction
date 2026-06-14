@@ -343,7 +343,7 @@ function App() {
       </header>
 
       <main>
-        <section id="hero" className="relative min-h-[92svh] overflow-hidden pt-20 text-white">
+        <section id="hero" className="hero-section relative min-h-[92svh] overflow-hidden pt-20 text-white">
           <img
             src={assetPath("assets/hero-construction.png")}
             alt="Premium construction and interior project"
@@ -351,16 +351,16 @@ function App() {
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,17,17,.92),rgba(17,17,17,.58),rgba(17,17,17,.18))]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(185,28,28,.32),transparent_34%)]" />
-          <div className="relative mx-auto grid min-h-[calc(92svh-5rem)] max-w-7xl content-center px-4 pb-10 pt-16 sm:px-6 lg:px-8">
+          <div className="hero-inner relative mx-auto grid min-h-[calc(92svh-5rem)] max-w-7xl content-center px-4 pb-10 pt-16 sm:px-6 lg:px-8">
             <Reveal className="max-w-4xl">
               <span className="inline-flex items-center gap-2 border-l-4 border-ember bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.24em] backdrop-blur">
                 <Sparkles size={16} />
                 Mandya . Mysore . Bangalore
               </span>
-              <h1 className="mt-7 max-w-4xl text-5xl font-black leading-[0.96] text-white sm:text-6xl lg:text-7xl">
+              <h1 className="hero-title mt-7 max-w-4xl text-5xl font-black leading-[0.96] text-white sm:text-6xl lg:text-7xl">
                 ISHTA Construction and Interior
               </h1>
-              <p className="mt-6 max-w-2xl text-xl font-semibold text-white/90 sm:text-2xl">
+              <p className="hero-copy mt-6 max-w-2xl text-xl font-semibold text-white/90 sm:text-2xl">
                 Your Vision, Our Mission. We build refined homes, practical interiors, and premium spaces with disciplined execution.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -374,7 +374,7 @@ function App() {
                 </a>
               </div>
             </Reveal>
-            <div className="mt-12 grid gap-3 sm:grid-cols-3 lg:max-w-4xl">
+            <div className="hero-stats mt-12 grid gap-3 sm:grid-cols-3 lg:max-w-4xl">
               {[
                 ["3", "Cities served"],
                 ["360", "Degree execution"],
@@ -477,15 +477,15 @@ function App() {
           </motion.section>
         )}
 
-        <section id="projects" className="section bg-coal text-white">
+        <section id="projects" className="section section-luxury-light">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <Reveal>
-                <p className="eyebrow text-sand">Projects</p>
-                <h2 className="section-title text-white">A portfolio feel for homes that need to be lived in, not just photographed.</h2>
+                <p className="eyebrow">Projects</p>
+                <h2 className="section-title">A portfolio feel for homes that need to be lived in, not just photographed.</h2>
               </Reveal>
               <Reveal delay={0.1}>
-                <p className="max-w-2xl text-lg leading-8 text-white/70">
+                <p className="max-w-2xl text-lg leading-8 text-coal/70">
                   From foundation to final lighting, the gallery shows the kind of premium residential and interior outcomes ISHTA is designed to deliver.
                 </p>
               </Reveal>
@@ -532,7 +532,7 @@ function App() {
         <section id="process" className="section section-concrete-warm">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
             <Reveal className="relative overflow-hidden rounded-sm shadow-premium">
-              <img src={assetPath("assets/process-site.png")} alt="ISHTA construction process site" className="h-[460px] w-full object-cover" />
+              <img src={assetPath("assets/process-site.png")} alt="ISHTA construction process site" className="process-image h-[460px] w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-coal/80 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <p className="text-sm font-black uppercase text-sand">Construction Process</p>
@@ -576,7 +576,7 @@ function App() {
               </div>
             </Reveal>
             <Reveal delay={0.1} className="relative">
-              <img src={assetPath("assets/project-interior.png")} alt="Premium ISHTA interior project" className="h-[540px] w-full rounded-sm object-cover shadow-premium" />
+              <img src={assetPath("assets/project-interior.png")} alt="Premium ISHTA interior project" className="interior-image h-[540px] w-full rounded-sm object-cover shadow-premium" />
               <div className="absolute -bottom-5 left-4 right-4 glass-panel border-white/50 bg-white/75 p-5 text-coal shadow-glass sm:left-8 sm:right-auto sm:w-72">
                 <Award className="text-ember" size={28} />
                 <p className="mt-3 text-lg font-black">Designed for comfort. Detailed for longevity.</p>
