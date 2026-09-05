@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init *)",
+      "Bash(SHOTS='[[\"hero\",0]]' node shot.mjs)",
+      "Bash(SHOTS='[[\"hero\",0],[\"about\",1000],[\"services\",2050],[\"projects\",3100]]' node shot.mjs)",
+      "Bash(SHOTS='[[\"p1\",4500],[\"p2\",5800],[\"p3\",7000],[\"int\",8000]]' node shot.mjs)",
+      "Bash(SHOTS='[[\"p1\",4600],[\"p2\",5900],[\"p3\",7100]]' node shot.mjs)",
+      "Bash(SHOTS='[[\"test\",8900],[\"contact\",9700],[\"foot\",10624]]' node shot.mjs)",
+      "Bash(SHOTS='[[\"testi\",8350]]' node shot.mjs)",
+      "Bash(W=390 H=844 TAG=mobile SHOTS='[[\"hero\",0],[\"services\",2600]]' node shot.mjs)",
+      "Bash(W=390 H=844 TAG=mobile SHOTS='[[\"hero2\",620],[\"proc\",7600]]' node shot.mjs)",
+      "Bash(W=390 H=844 TAG=mobile SHOTS='[[\"hero2\",560],[\"proc\",7800],[\"proc2\",9000]]' node shot.mjs)",
+      "Bash(node modal.mjs)",
+      "Bash(taskkill //F //FI \"WINDOWTITLE eq *vite*\")",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //F //PID 18608)",
+      "Bash(SITE=\"http://localhost:5173/Construction/\" TAG=dev SHOTS='[[\"hero\",0]]' node shot.mjs)"
+    ]
+  }
+}
